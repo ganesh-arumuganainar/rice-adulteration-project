@@ -3,3 +3,4 @@ Jinja2==2.11.2
 requests==2.24.0
 gunicorn
 opencv-python
+uwsgi
