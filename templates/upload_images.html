@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Uploading Images</title>
+</head>
+<body>
+	<header>
+		<div class="container">
+		<div id="brandname">
+			Food Adulteration Project
+		</div>
+		<h2>Rice Quality Detection</h2>
+		
+	</div>
+	</header>
+
+	<div class="ml-container">
+
+		<form action="{{ url_for('upload_image')}}" method="POST" enctype="multipart/form-data">
+		<p>Upload image here</p>
+		<input type="file" id="image" name="image" accept="image/*">
+		<br/>
+
+		<button type="submit">Upload</button>
+
+        
+		
+	</form>		
+	</div>
+
+</body>
+</html>
+
+
+
