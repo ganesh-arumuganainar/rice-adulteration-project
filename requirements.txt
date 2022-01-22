@@ -1,6 +1,6 @@
 Flask==1.1.2
 Jinja2==2.11.2
 requests==2.24.0
-gunicorn
+gunicorn==0.18
 opencv-python
 uwsgi
