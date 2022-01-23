@@ -4,10 +4,10 @@ import os
 import cv2
 from riceQuality import getResults
 
-app = Flask(__name__, static_url_path='/Users/ganesh/Downloads/Rice_Quality_Project_0.1/static')
+application = Flask(__name__, static_url_path='/Users/ganesh/Downloads/Rice_Quality_Project_0.1/static')
 
-app.config["IMAGE_UPLOADS"] = 'static'
-app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["JPEG","JPG","PNG"]
+application.config["IMAGE_UPLOADS"] = 'static'
+application.config["ALLOWED_IMAGE_EXTENSIONS"] = ["JPEG","JPG","PNG"]
 
 
 def allowed_image(filename):
@@ -23,7 +23,7 @@ def allowed_image(filename):
         return False
 
 
-@app.route("/", methods=["GET", "POST"])
+@application.route("/", methods=["GET", "POST"])
 
 def upload_image():
     if request.method=="POST":
@@ -52,7 +52,7 @@ def upload_image():
 
 
 
-@app.route("/showing-image/<image_name>", methods=["GET", "POST"])
+@application.route("/showing-image/<image_name>", methods=["GET", "POST"])
 
 def showing_image(image_name):
     if request.method == "POST":
@@ -67,7 +67,5 @@ def showing_image(image_name):
 
 
 if __name__ == '__main__':
-    app.run()
+    application.run()
     
-else:
-    application=app
