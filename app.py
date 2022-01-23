@@ -17,7 +17,7 @@ def allowed_image(filename):
 
     ext = filename.rsplit(".", 1)[1]
 
-    if ext.upper() in app.config["ALLOWED_IMAGE_EXTENSIONS"]:
+    if ext.upper() in application.config["ALLOWED_IMAGE_EXTENSIONS"]:
         return True
     else:
         return False
@@ -40,7 +40,7 @@ def upload_image():
 
                 filename = secure_filename(image.filename)
                 
-                image.save(os.path.join(app.config["IMAGE_UPLOADS"], filename))
+                image.save(os.path.join(application.config["IMAGE_UPLOADS"], filename))
 
                 return redirect(f'/showing-image/{filename}')
 
@@ -57,7 +57,7 @@ def upload_image():
 def showing_image(image_name):
     if request.method == "POST":
         
-        image_path = os.path.join(app.config["IMAGE_UPLOADS"], image_name)
+        image_path = os.path.join(application.config["IMAGE_UPLOADS"], image_name)
         Slender, Medium, Bold, Round, Total = getResults(image_path)
 
         return render_template("prediction_result.html", image_name=image_name, Slender=Slender, Medium=Medium, Bold=Bold, Round=Round, Total=Total)
