@@ -25,14 +25,9 @@
 			<img src="{{ url_for('static', filename=image_name) }}">
 		</div>
 		<div>
-			There are {{Total}} rice grains <br/>
 
-			Categorised as <br/>
-
-			Slender : {{Slender}} <br/> 
-			Medium : {{Medium}} <br/>
-			Bold : {{Bold}} <br/>
-			Round : {{Round}} <br/>
+			The image has {{max_probability}} % {{predicted_max_class}} grains with {{min_probability}} % {{predicted_min_class}}
+			<button type="submit">Test Again</button>
 
 		</div>
         
