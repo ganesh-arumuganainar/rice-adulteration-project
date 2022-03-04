@@ -3,5 +3,5 @@ Jinja2==2.11.2
 requests==2.24.0
 gunicorn==18.0
 opencv-python-headless==4.2.0.32
-tensorflow
+tensorflow-cpu
 pillow
