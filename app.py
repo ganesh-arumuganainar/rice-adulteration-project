@@ -12,7 +12,7 @@ application = Flask(__name__, static_url_path='/Users/ganesh/Downloads/Rice_Qual
 application.config["IMAGE_UPLOADS"] = 'static'
 application.config["ALLOWED_IMAGE_EXTENSIONS"] = ["JPEG","JPG","PNG"]
 
-model = tf.keras.models.load_model('/Users/ganesh/Downloads/Rice_Quality_Project_0.1/model/keras_model.h5')
+model = tf.keras.models.load_model('model')
 
 def allowed_image(filename):
 
