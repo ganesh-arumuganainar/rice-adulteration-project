@@ -4,7 +4,6 @@ import os
 import cv2
 import tensorflow as tf
 import numpy as np
-from riceQuality import getResults
 from PIL import Image, ImageOps
 
 rice_classes = ['Basmati', 'Gundu Malli']
