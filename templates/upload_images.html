@@ -6,25 +6,73 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Uploading Images</title>
 </head>
+<script>
+	var categoryObject = {
+	  "Rice": {
+		"Basmati": [],
+		"Gundu Malli": [],
+		"Raw Rice": []    
+	  },
+	  "Cereals": {
+		"Black Gram": [],
+		"Cow Peas": [],
+		"Green Moong Dal": [],
+		"Horse Gram": []
+	  }
+	}
+	window.onload = function() {
+	  var category = document.getElementById("subject");
+	  var subCategory = document.getElementById("topic");
+	  
+	  for (var x in categoryObject) {
+		category.options[category.options.length] = new Option(x, x);
+	  }
+	  category.onchange = function() {
+	    //empty Chapters- and Topics- dropdowns
+	    subCategory.length = 1;
+	    subCategory.length = 1;
+		//display correct values
+		for (var y in categoryObject[this.value]) {
+		  subCategory.options[subCategory.options.length] = new Option(y, y);
+		}
+	  }
+	  topicSel.onchange = function() {
+	    //empty Chapters dropdown
+	    //display correct values
+		var z = categoryObject[category.value][this.value];
+		for (var i = 0; i < z.length; i++) {
+		}
+	  }
+	}
+</script>
 <body>
 	<header>
 		<div class="container">
 		<div id="brandname">
 			Food Adulteration Project
 		</div>
-		<h2>Rice Quality Detection</h2>
+		<h2>Rice and Cereal Quality Detection</h2>
 		
 	</div>
 	</header>
 
 	<div class="ml-container">
 
-		<form action="{{ url_for('upload_image')}}" method="POST" enctype="multipart/form-data">
+		<form action="{{ url_for('upload_image')}}" method="POST" enctype="multipart/form-data" name="category">
+			Rice or Cereal: <select name="subject" id="subject">
+				<option value="" selected="selected">Select category</option>
+			  </select>
+			  <br><br>
+			Variety: <select name="topic" id="topic">
+				<option value="" selected="selected">Please select category first</option>
+			  </select>
+			  <br><br>
+			
 		<p>Upload image here</p>
 		<input type="file" id="image" name="image" accept="image/*">
 		<br/>
 
-		<button type="submit">Upload</button>
+		<button type="submit" style="width: 80px; height: 35px;">Upload</button>
 
         
 		
@@ -33,6 +81,3 @@
 
 </body>
 </html>
-
-
-
