@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Results</title>
+</head>
+<body>
+	<header>
+		<div class="container">
+		<div id="brandname">
+			Food Adulteration Project
+		</div>
+		<h2> {{category}} Quality Detection for the variety {{subCategory}} </h2>
+		
+	</div>
+	</header>
+
+	<div class="ml-container">
+
+		<form action="{{ url_for('upload_image')}}" method="POST" enctype="multipart/form-data">
+		<p>The predicted results are</p>
+		<div>
+			<img src="{{ url_for('static', filename=image_name) }}" width="400px" height="400px">
+		</div>
+		<div>
+
+			Black Gram Probablity: {{blackGram}} <br/>
+			Cow Peas Probablity: {{cowPeas}}<br/>
+			Green Moonng Dal Probablity: {{greenMoongDal}}<br/>
+			Horse Gram Probability: {{horseGram}}<br/>
+			<h2>{{result}}</h2><br/>
+			<button type="submit" style="width: 80px; height: 35px;">Test Again</button>
+
+		</div>
+        
+		
+	</form>		
+	</div>
+
+</body>
+</html>
