@@ -12,7 +12,7 @@
 		<div id="brandname">
 			Food Adulteration Project
 		</div>
-		<h2>Rice Quality Detection</h2>
+		<h2> Rice and Cereal Quality Detection </h2>
 		
 	</div>
 	</header>
@@ -22,9 +22,9 @@
 		<form action="" method="POST" enctype="multipart/form-data">
 		<p>The uploaded image is here ! Click predict to publish results</p>
 		<div>
-			<img src="{{ url_for('static', filename=value) }}">
+			<img src="{{ url_for('static', filename=value) }}" width="400px" height="400px">
 		</div>
-		<button type="submit">Predict</button>
+		<button type="submit" style="width: 80px; height: 35px;">Predict</button>
 
         
 		
@@ -33,6 +33,3 @@
 
 </body>
 </html>
-
-
-
