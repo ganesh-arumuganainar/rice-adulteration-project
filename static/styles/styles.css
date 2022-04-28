@@ -1,0 +1,86 @@
+* { 
+	box-sizing: border-box;
+}
+	
+body {
+	font-size: 1.4rem;
+}
+	/* sets the base font size for the document; turns on kerning pairs and ligatures */
+	
+body, ul, ol, dl {
+	margin: 0;
+}
+
+body{
+	height: 100vh;
+}
+
+header {
+	width: 100%;
+	height: 20%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #446A46;
+}
+
+
+h2 {
+    color: #e8c07d;
+}
+
+/*body*/
+
+.ml-container {
+	width: 100%; 
+	min-height: 80%; 
+	display: flex; 
+	align-items: center; 
+	justify-content: center;
+	background-image: linear-gradient(to bottom, rgba(68, 67, 67, 0.52), rgba(10, 28, 10, 0.73)), url("../istockphoto-1047601054-170667a.jpeg");
+	color: black;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: black;
+}
+
+.ml-container p, #subject, #topic{
+	color: black;
+	font-size: 1rem;
+	font-style: italic;
+}
+
+.ml-container div{
+	
+	width: 80%;
+	min-height: 80%;
+	
+}
+
+form {
+	min-height: 50%;
+	min-width: 50%;
+	display: flex;
+	flex-direction: column;
+	background-color: #E9EFC0;
+	align-items: center;
+	justify-content: center;
+	opacity: 0.8;
+	padding: 2rem;
+	border-radius: 5%;
+}
+
+button {
+	display:inline-block;
+	font-weight:300;
+	color:#e8c07d;
+	background-color: #446A46;
+	text-align:center;
+}
+
+.ml-container img{
+	max-width: 250px;
+	max-height: 250px;
+	margin-left: 25%;
+}
+
