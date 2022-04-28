@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css') }}">
 	<title>Uploading Images</title>
 </head>
 <script>
@@ -46,37 +47,36 @@
 	}
 </script>
 <body>
+	
 	<header>
 		<div class="container">
 		<div id="brandname">
-			Food Adulteration Project
+			
 		</div>
 		<h2>Rice and Cereal Quality Detection</h2>
-		
 	</div>
 	</header>
 
 	<div class="ml-container">
-
-		<form action="{{ url_for('upload_image')}}" method="POST" enctype="multipart/form-data" name="category">
-			Rice or Cereal: <select name="subject" id="subject">
-				<option value="" selected="selected">Select category</option>
-			  </select>
-			  <br><br>
-			Variety: <select name="topic" id="topic">
-				<option value="" selected="selected">Please select category first</option>
-			  </select>
-			  <br><br>
+		<div id="form-container">
+			<form action="{{ url_for('upload_image')}}" method="POST" enctype="multipart/form-data" name="category">
+				
+				<p>Rice or Cereal:</p> <select name="subject" id="subject">
+					<option value="" selected="selected">Select category</option>
+				</select>
 			
-		<p>Upload image here</p>
-		<input type="file" id="image" name="image" accept="image/*">
-		<br/>
-
-		<button type="submit" style="width: 80px; height: 35px;">Upload</button>
-
-        
+				<p>Variety:</p> <select name="topic" id="topic">
+					<option value="" selected="selected">Please select category first</option>
+				</select>
+	
+				
+				<p>Upload image here</p>
+			    <input type="file" id="image" name="image" accept="image/*">
 		
-	</form>		
+
+			   <button type="submit">Upload</button>
+			</form>		
+		</div>	
 	</div>
 
 </body>
